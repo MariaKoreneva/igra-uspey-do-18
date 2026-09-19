@@ -537,7 +537,7 @@ p {
   .choice-zones {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-top: 0px;
+    margin-top: 25px;
   }
 
   .choice-zone {
