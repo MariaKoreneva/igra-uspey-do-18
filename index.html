@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4ee">
+  <title>Успеть до 18:00</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="screen start-screen active" id="start-screen">
+      <div class="start-card">
+        <h1>УСПЕТЬ ДО 18:00</h1>
+        <div class="intro">
+          <p>Сегодня у вас насыщенный рабочий день.</p>
+          <p>Сейчас 9:00. У вас 100% энергии и 12 задач.</p>
+          <p>До 18:00 нужно успеть разобраться со всеми делами.</p>
+          <p>В течение дня будут появляться рабочие задачи. Выберите, что вы делаете самостоятельно, а где используете ИИ. После каждого решения вы сразу увидите, сколько времени и энергии это потребовало.</p>
+          <p>Перетаскивайте карточку в одну из двух зон:</p>
+          <div class="intro-options">
+            <span>СДЕЛАЮ САМОСТОЯТЕЛЬНО</span>
+            <span>ИСПОЛЬЗУЮ ИИ</span>
+          </div>
+          <p>Можно также просто нажать на нужную зону.</p>
+          <p class="intro-emphasis">Каждое решение влияет на ваше время и энергию.</p>
+          <p>Ваша цель - успеть закончить все дела до 18:00 и сохранить как можно больше энергии.</p>
+        </div>
+        <button class="primary-button" id="start-button" type="button">НАЧАТЬ РАБОЧИЙ ДЕНЬ</button>
+      </div>
+    </section>
+
+    <section class="screen game-screen" id="game-screen">
+      <header class="status-panel">
+        <div class="status-item time-status" id="time-status">
+          <span>Время</span>
+          <strong id="time-value">09:00</strong>
+        </div>
+        <div class="status-item energy-status" id="energy-status">
+          <div class="status-label">
+            <span>Энергия</span>
+            <strong id="energy-value">100%</strong>
+          </div>
+          <div class="energy-track" aria-hidden="true">
+            <div class="energy-fill" id="energy-fill"></div>
+          </div>
+        </div>
+        <div class="status-item task-status">
+          <span>Задача</span>
+          <strong id="task-progress">1 из 12</strong>
+        </div>
+      </header>
+
+      <div class="task-area">
+        <p class="task-label">ТЕКУЩАЯ ЗАДАЧА</p>
+        <article class="task-card" id="task-card" tabindex="0">
+          <span class="task-number" id="task-number">01</span>
+          <h2 id="task-title"></h2>
+          <p class="drag-hint">Перетащите карточку в выбранную зону или просто нажмите на нужную зону.</p>
+        </article>
+
+        <div class="result-message" id="result-message" aria-live="polite">
+          <p id="result-text"></p>
+          <p class="saving-text" id="saving-text"></p>
+          <button class="primary-button next-button" id="next-button" type="button">СЛЕДУЮЩАЯ ЗАДАЧА</button>
+        </div>
+      </div>
+
+      <div class="choice-zones">
+        <button class="choice-zone self-zone" id="self-zone" type="button" data-choice="self">
+          <span class="zone-mark">01</span>
+          <strong>СДЕЛАЮ САМОСТОЯТЕЛЬНО</strong>
+        </button>
+        <button class="choice-zone ai-zone" id="ai-zone" type="button" data-choice="ai">
+          <span class="zone-mark">02</span>
+          <strong>ИСПОЛЬЗУЮ ИИ</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="screen final-screen" id="final-screen">
+      <div class="final-card">
+        <p class="eyebrow">РЕЗУЛЬТАТ</p>
+        <h1 id="final-title"></h1>
+        <p class="final-description" id="final-description"></p>
+        <div class="final-stats">
+          <p><span>Рабочий день закончен:</span><strong id="final-time"></strong></p>
+          <p><span>Энергия:</span><strong id="final-energy"></strong></p>
+          <p><span>Сэкономлено с помощью ИИ:</span><strong id="final-saved"></strong></p>
+        </div>
+        <p class="deadline-result" id="deadline-result"></p>
+        <button class="primary-button" id="restart-button" type="button">ПРОЙТИ ЕЩЕ РАЗ</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
